@@ -115,3 +115,20 @@ func thirdMax(nums []int) int {
 		return max
 	}
 }
+
+func findDisappearedNumbers(nums []int) []int {
+	n := make([]int, len(nums))
+	disappeared := make([]int, 0, len(nums))
+
+	for i := 0; i < len(nums); i++ {
+		n[nums[i]-1] = nums[i]
+	}
+
+	for i, v := range n {
+		if v == 0 {
+			disappeared = append(disappeared, i+1)
+		}
+	}
+
+	return disappeared
+}
