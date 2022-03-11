@@ -72,3 +72,46 @@ func findDisappearedNumbers(nums []int) []int {
 
 	return disappeared
 }
+
+func sortedSquares(nums []int) []int {
+	negativeSquares := make([]int, 0, len(nums)) //Mem: O(n)
+	positiveSquares := make([]int, 0, len(nums)) //Mem: O(n)
+	result := make([]int, 0, len(nums))          //Mem: O(n)
+
+	// Time: O(n)
+	for _, n := range nums {
+		if n < 0 {
+			negativeSquares = append(negativeSquares, n*n)
+		} else {
+			positiveSquares = append(positiveSquares, n*n)
+		}
+	}
+
+	i := 0
+	j := len(negativeSquares) - 1
+
+	//Time: O(n)
+	for i < len(positiveSquares) && j >= 0 {
+		if positiveSquares[i] < negativeSquares[j] {
+			result = append(result, positiveSquares[i])
+			i++
+		} else {
+			result = append(result, negativeSquares[j])
+			j--
+		}
+	}
+
+	if j < 0 && i < len(positiveSquares) {
+		result = append(result, positiveSquares[i:]...)
+	}
+
+	if i == len(positiveSquares) && j >= 0 {
+		//Time: O(n)
+		for j >= 0 {
+			result = append(result, negativeSquares[j])
+			j--
+		}
+	}
+
+	return result
+}
