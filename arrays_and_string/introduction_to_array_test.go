@@ -153,3 +153,46 @@ func TestPlusOne(t *testing.T) {
 		}
 	}
 }
+
+func TestSpiralOrder(t *testing.T) {
+	testCases := []struct {
+		name     string
+		input    [][]int
+		expected []int
+	}{
+		{
+			"case #1",
+			[][]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}},
+			[]int{1, 2, 3, 6, 9, 8, 7, 4, 5},
+		},
+		{
+			"case #2",
+			[][]int{{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}},
+			[]int{1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7},
+		},
+	}
+
+	for _, testCase := range testCases {
+		result := spiralOrder(testCase.input)
+
+		if len(result) != len(testCase.expected) {
+			t.Errorf(
+				"Fail. Test case: %s. Expected: %d. Actual: %d",
+				testCase.name,
+				len(testCase.expected),
+				len(result),
+			)
+		}
+
+		for i := 0; i < len(result); i++ {
+			if result[i] != testCase.expected[i] {
+				t.Errorf(
+					"Fail. Test case: %s. Expected: %v. Actual: %v",
+					testCase.name,
+					testCase.expected,
+					result,
+				)
+			}
+		}
+	}
+}
