@@ -1,7 +1,5 @@
 package arrays_and_string
 
-import "fmt"
-
 func pivotIndex(nums []int) int {
 	sum := 0
 	leftsum := 0
@@ -88,80 +86,4 @@ func reverseSlice(nums []int) []int {
 	}
 
 	return nums
-}
-
-func spiralOrder(matrix [][]int) []int {
-	if len(matrix) == 0 {
-		return []int{}
-	}
-
-	verticalSteps := len(matrix) - 1
-	horizontalSteps := len(matrix[0])
-
-	result := make([]int, 0, len(matrix)*len(matrix[0]))
-
-	i := 0
-	j := 0
-
-	h := true
-	v := false
-	hDirection := 1
-	vDirection := 1
-
-	for verticalSteps > 0 && horizontalSteps > 0 {
-		if v && vDirection > 0 {
-			for i < verticalSteps {
-				result = append(result, matrix[i][j])
-				i += vDirection
-			}
-			h = true
-			v = false
-			verticalSteps--
-			i = verticalSteps
-			vDirection = -1
-		}
-
-		if v && vDirection < 0 {
-			for i > 0 {
-				result = append(result, matrix[i][j])
-				i += vDirection
-			}
-
-			h = true
-			v = false
-			verticalSteps--
-			i = len(matrix) - verticalSteps
-			vDirection = 1
-		}
-
-		if h && hDirection > 0 {
-			for j < horizontalSteps {
-				fmt.Println(j)
-				result = append(result, matrix[i][j])
-				j += hDirection
-			}
-
-			h = false
-			v = true
-			horizontalSteps--
-			j = horizontalSteps - 1
-			hDirection = -1
-		}
-
-		if h && hDirection < 0 {
-			for j > 0 {
-				fmt.Println(j)
-				result = append(result, matrix[i][j])
-				j += hDirection
-			}
-
-			h = false
-			v = true
-			horizontalSteps--
-			j = len(matrix[0]) - horizontalSteps
-			hDirection = 1
-		}
-	}
-
-	return result
 }
