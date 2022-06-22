@@ -1,6 +1,7 @@
 package recursion
 
 import (
+	"math"
 	"testing"
 )
 
@@ -38,6 +39,12 @@ func TestMyPow(t *testing.T) {
 			8.88023,
 			3,
 			700.28148,
+		},
+		{
+			"Case #5",
+			0.00001,
+			int(math.MaxInt32),
+			0.00000,
 		},
 	}
 

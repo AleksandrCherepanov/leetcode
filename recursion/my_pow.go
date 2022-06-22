@@ -7,7 +7,7 @@ func myPow(x float64, n int) float64 {
 		negative = true
 	}
 
-	result := powMultiplication(x, n, x)
+	result := powMultiplication(x, n)
 
 	if negative {
 		result = 1 / result
@@ -16,10 +16,16 @@ func myPow(x float64, n int) float64 {
 	return float64(int(result*100000)) / 100000
 }
 
-func powMultiplication(x float64, n int, prev float64) float64 {
+func powMultiplication(x float64, n int) float64 {
 	if n == 0 {
 		return 1
 	}
 
-	return x * powMultiplication(x, n-1, prev)
+	result := powMultiplication(x, n/2)
+
+	if n%2 == 0 {
+		return result * result
+	}
+
+	return result * result * x
 }
