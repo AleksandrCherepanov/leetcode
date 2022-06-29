@@ -10,11 +10,24 @@ func bottomUpIterative(nums []int) []int {
 		result = append(result, []int{n})
 	}
 
-	i := 0
-	j := 0
 	for len(result) != 1 {
-
+		i := 0
+		j := 1
+		c := 0
+		for i < len(result) && j < len(result) {
+			result[c] = merge(result[i], result[j])
+			i += 2
+			j += 2
+			c++
+		}
+		if i < len(result) {
+			result[c] = result[i]
+			c++
+		}
+		result = result[:c]
 	}
+
+	return result[0]
 }
 
 func topDownRecursive(nums []int) []int {
