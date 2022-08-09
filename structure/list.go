@@ -26,6 +26,15 @@ func (first *ListNode) Push(val int) *ListNode {
 func (ln *ListNode) IsEqual(listNode *ListNode) bool {
 	head1 := ln
 	head2 := listNode
+
+	if head1 == nil && head2 == nil {
+		return true
+	}
+
+	if head1 == nil || head2 == nil {
+		return false
+	}
+
 	for head1 != nil && head2 != nil {
 		if head1.Val != head2.Val {
 			return false

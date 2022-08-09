@@ -16,13 +16,13 @@ func TestRemoveDuplicatesFromSortedList(t *testing.T) {
 	testCases := []tCase{
 		{
 			"case #1",
-			structure.NewNode(1).Add(1).Add(2),
-			structure.NewNode(1).Add(2),
+			structure.NewNode(1).Push(1).Push(2),
+			structure.NewNode(1).Push(2),
 		},
 		{
 			"case #2",
-			structure.NewNode(1).Add(1).Add(2).Add(3).Add(3),
-			structure.NewNode(1).Add(2).Add(3),
+			structure.NewNode(1).Push(1).Push(2).Push(3).Push(3),
+			structure.NewNode(1).Push(2).Push(3),
 		},
 	}
 

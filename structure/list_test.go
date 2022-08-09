@@ -29,8 +29,8 @@ func TestListToSlice(t *testing.T) {
 	}{
 		{
 			"Empty list to slice",
-			&ListNode{},
-			[]int{0},
+			nil,
+			[]int{},
 		},
 		{
 			"Non empty list to slice",
@@ -49,6 +49,48 @@ func TestListToSlice(t *testing.T) {
 			if v != testCase.expected[i] {
 				t.Fatalf("List to slice invalid: Expected: %v. Actual: %v.", testCase.expected, actual)
 			}
+		}
+	}
+}
+
+func TestListIsEqual(t *testing.T) {
+	testCases := []struct {
+		name     string
+		a        *ListNode
+		b        *ListNode
+		expected bool
+	}{
+		{
+			"empty lists",
+			nil,
+			nil,
+			true,
+		},
+		{
+			"one list is empty",
+			nil,
+			&ListNode{},
+			false,
+		},
+		{
+			"lists have differnt length",
+			NewNode(1).Push(2),
+			NewNode(1).Push(2).Push(3),
+			false,
+		},
+		{
+			"equal lists",
+			NewNode(1).Push(2).Push(3),
+			NewNode(1).Push(2).Push(3),
+			true,
+		},
+	}
+
+	for _, testCase := range testCases {
+		result := testCase.a.IsEqual(testCase.b)
+
+		if result != testCase.expected {
+			t.Fatalf("Case %v: Expected: %v. Actual: %v.", testCase.name, testCase.expected, result)
 		}
 	}
 }

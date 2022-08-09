@@ -10,17 +10,19 @@ func RemoveDuplicatesFromSortedList(head *structure.ListNode) *structure.ListNod
 	}
 
 	pointer := head
-	prev := pointer
+	prev := head
 	for pointer != nil {
 		if pointer.Val != prev.Val {
-			head.Next = pointer
+			prev.Next = pointer
 			prev = pointer
+		}
+
+		if pointer.Next == nil && pointer.Val == prev.Val {
+			prev.Next = nil
 		}
 
 		pointer = pointer.Next
 	}
-
-	head.Next = pointer
 
 	return head
 }
