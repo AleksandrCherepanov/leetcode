@@ -1,11 +1,38 @@
 package main
 
-import (
-	"fmt"
-
-	"github.com/AleksandrCherepanov/leetcode/arrays"
-)
+import "github.com/AleksandrCherepanov/leetcode/structure"
 
 func main() {
-	fmt.Println(arrays.SortArrayByParity([]int{3, 1, 2, 4}))
+	root := structure.NewTreeNode(
+		1,
+		structure.NewTreeNode(
+			2,
+			structure.NewTreeNode(
+				3,
+				nil,
+				nil,
+			),
+			structure.NewTreeNode(
+				4,
+				structure.NewTreeNode(5, nil, nil),
+				structure.NewTreeNode(6, nil, nil),
+			),
+		),
+		structure.NewTreeNode(
+			7,
+			nil,
+			structure.NewTreeNode(
+				8,
+				structure.NewTreeNode(
+					9,
+					nil,
+					nil,
+				),
+				nil,
+			),
+		),
+	)
+
+	root.PrintPreOrder()
+	root.PrintInOrder()
 }
