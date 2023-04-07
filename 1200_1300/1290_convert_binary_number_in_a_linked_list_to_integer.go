@@ -2,6 +2,11 @@ package main
 
 import "math"
 
+type ListNode struct {
+    Val int
+    Next *ListNode
+}
+
 func getDecimalValue(head *ListNode) int {
     head = reverse(head)
 

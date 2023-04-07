@@ -2,17 +2,17 @@ package arrays_and_string
 
 import "testing"
 
-type tTwoSumResult []int
+type tTwoSumOrderResult []int
 
-type tTwoSumCase struct {
+type tTwoSumOrderCase struct {
 	name     string
 	a        []int
 	b        int
-	expected tTwoSumResult
+	expected tTwoSumOrderResult
 }
 
-func TestTwoSum(t *testing.T) {
-	testCases := []tTwoSumCase{
+func TestTwoSumOrder(t *testing.T) {
+	testCases := []tTwoSumOrderCase{
 		{
 			"Case #1",
 			[]int{2, 7, 11, 15},
@@ -34,7 +34,7 @@ func TestTwoSum(t *testing.T) {
 	}
 
 	for _, testCase := range testCases {
-		result := tTwoSumResult(twoSum(testCase.a, testCase.b))
+		result := tTwoSumOrderResult(twoSumOrder(testCase.a, testCase.b))
 		if len(result) != len(testCase.expected) {
 			twoSumPrintError(t, testCase, result)
 		}
@@ -47,7 +47,7 @@ func TestTwoSum(t *testing.T) {
 	}
 }
 
-func twoSumPrintError(t *testing.T, testCase tTwoSumCase, result tTwoSumResult) {
+func twoSumPrintError(t *testing.T, testCase tTwoSumOrderCase, result tTwoSumOrderResult) {
 	t.Fatalf(
 		"Case: %s. Expected: %v. Actual: %v",
 		testCase.name,

@@ -1,6 +1,6 @@
 package arrays_and_string
 
-func twoSum(numbers []int, target int) []int {
+func twoSumOrder(numbers []int, target int) []int {
 	result := make([]int, 2)
 
 	i := 0
