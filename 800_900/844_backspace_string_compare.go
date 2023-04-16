@@ -20,12 +20,12 @@ func backspaceCompare(s string, t string) bool {
 func processBackspace(s string) []rune {
 	result := []rune{}
 
-	for _, c := range (s) {
+	for _, c := range s {
 		if c != rune('#') {
-			result = append(result, c)	
+			result = append(result, c)
 		} else if len(result) != 0 {
 			result = result[:len(result)-1]
-		} 
+		}
 
 	}
 
