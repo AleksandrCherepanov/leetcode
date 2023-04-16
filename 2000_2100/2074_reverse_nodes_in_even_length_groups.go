@@ -14,14 +14,14 @@ func reverseEvenLengthGroups(head *ListNode) *ListNode {
 		tail := head
 
 		j := 1
-		for(j < i && tail != nil && tail.Next != nil) {
+		for j < i && tail != nil && tail.Next != nil {
 			tail = tail.Next
 			j++
 		}
 
 		nextHead = tail.Next
 
-		if j % 2 == 0 {
+		if j%2 == 0 {
 			tail.Next = nil
 			prev.Next = reverse(head)
 			prev = head
