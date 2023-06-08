@@ -4,7 +4,7 @@ import "strings"
 
 func simplifyPath(path string) string {
 	tokens := strings.Split(path, "/")
-	stack := []string{}
+	stack := make([]string, 0)
 
 	for _, token := range tokens {
 		if token == "." || token == "/" || token == "" {

@@ -3,7 +3,7 @@ package main
 func isValid(s string) bool {
 	parentheses := map[string]string{"(": ")", "{": "}", "[": "]"}
 
-	stack := []string{}
+	stack := make([]string, 0)
 	for _, c := range s {
 		cs := string(c)
 		if _, ok := parentheses[cs]; ok {
