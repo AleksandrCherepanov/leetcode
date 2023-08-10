@@ -17,7 +17,6 @@ public:
             heap.pop();
 
             max /= 2;
-            cout << max << endl;
             sum -= max;
 
             if (sum <= halfSum) {
