@@ -45,7 +45,6 @@ let shortestPath = function (grid, k) {
                 }
             }
         }
-        console.log(seen)
         steps++
     }
 
