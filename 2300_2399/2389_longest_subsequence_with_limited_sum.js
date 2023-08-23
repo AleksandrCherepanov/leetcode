@@ -30,8 +30,5 @@ var answerQueries = function(nums, queries) {
         answer.push(bs(prefix, q))
     });
 
-    console.log(answer);
+    return answer;
 };
-
-answerQueries([4,5,2,1], [3,10,21]);
-answerQueries([2,3,4,5], [1]);

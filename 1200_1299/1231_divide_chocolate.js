@@ -28,7 +28,3 @@ var maximizeSweetness = function(sweetness, k) {
 
     return r;
 };
-
-console.log(maximizeSweetness([1,2,3,4,5,6,7,8,9], 5));
-console.log(maximizeSweetness([5,6,7,8,9,1,2,3,4], 8));
-console.log(maximizeSweetness([1,2,2,1,2,2,1,2,2], 2));
