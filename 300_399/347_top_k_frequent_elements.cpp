@@ -11,18 +11,18 @@ public:
             umap[n]++;
         }
 
-        priority_queue<int, vector<int>, greater<int>> minq;
-        for (auto x: umap) {
-            minq.push(x.second);
-            if (minq.size() > k) {
-                minq.pop();
+        priority_queue<pair<int, int>> heap;
+        for (auto [key, val]: umap) {
+            heap.push({-val, key});
+            if (heap.size() > k) {
+                heap.pop();
             }
         }
 
         vector<int> result;
-        while (minq.size() > 0) {
-            result.push_back(umap[minq.top()]);
-            minq.pop();
+        while (heap.size() > 0) {
+            result.push_back(heap.top().second);
+            heap.pop();
         }
 
         return result;
