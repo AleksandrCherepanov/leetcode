@@ -19,7 +19,3 @@ var combinationSum3 = function(k, n) {
     return ans;
 
 };
-
-console.log(combinationSum3(3, 7));
-console.log(combinationSum3(3, 9));
-console.log(combinationSum3(4, 1));

@@ -48,9 +48,3 @@ var exist = function (board, word) {
 
     return false;
 };
-
-console.log(exist([['A', 'B', 'C', 'E'], ['S', 'F', 'C', 'S'], ['A', 'D', 'E', 'E']], 'ABCCED'));
-console.log(exist([['A', 'B', 'C', 'E'], ['S', 'F', 'C', 'S'], ['A', 'D', 'E', 'E']], 'SEE'));
-console.log(exist([['A', 'B', 'C', 'E'], ['S', 'F', 'C', 'S'], ['A', 'D', 'E', 'E']], 'ABCB'));
-console.log(exist([['C','A','A'],['A','A','A'],['B','C','D']], 'AAB'));
-console.log(exist([['a', 'a']], 'aaa'));

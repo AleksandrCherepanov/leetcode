@@ -15,6 +15,3 @@ var minCostClimbingStairs = function(cost) {
     const memo = new Map();
     return dp(cost.length);
 };
-
-console.log(minCostClimbingStairs([10,15,20]));
-console.log(minCostClimbingStairs([1,100,1,1,1,100,1,1,100,1]));

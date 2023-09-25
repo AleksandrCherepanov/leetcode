@@ -38,6 +38,3 @@ var splitArray = function(nums, k) {
 
     return r + 1;
 };
-
-console.log(splitArray([7,2,5,10,8], 2));
-console.log(splitArray([1,2,3,4,5], 2));
