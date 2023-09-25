@@ -29,6 +29,3 @@ const maxProfit = function(k, prices) {
 
     return dp(0, 0, k);
 };
-
-console.log(maxProfit(2, [2,4,1]));
-console.log(maxProfit(2, [3,2,6,5,0,3]));

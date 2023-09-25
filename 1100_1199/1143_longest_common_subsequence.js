@@ -21,7 +21,3 @@ const longestCommonSubsequence = function(text1, text2) {
 
     return dp(0, 0);
 };
-
-console.log(longestCommonSubsequence('abcde', 'ace'));
-console.log(longestCommonSubsequence('abc', 'abc'));
-console.log(longestCommonSubsequence('abc', 'def'));
