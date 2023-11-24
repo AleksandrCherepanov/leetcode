@@ -28,32 +28,3 @@ func SortArrayByParity(nums []int) []int {
 
 	return nums
 }
-
-func removeElement(nums []int, val int) int {
-	i := 0
-	j := len(nums) - 1
-	count := 0
-	for i <= j {
-		if nums[j] == val {
-			nums[j] = -1
-			j--
-			count++
-			continue
-		}
-
-		if nums[i] == val {
-			tmp := nums[i]
-			nums[i] = nums[j]
-			nums[j] = tmp
-			nums[j] = -1
-			j--
-			i++
-			count++
-			continue
-		}
-
-		i++
-	}
-
-	return len(nums) - count
-}
